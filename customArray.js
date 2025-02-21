@@ -49,33 +49,33 @@ class CustomArray {
         return this.count;
     }
 
-    // // Splice: Removes/Adds elements at a specific index
-    // splice(index, deleteCount, ...items) {
-    //     const removedItems = [];
+    // Splice: Removes/Adds elements at a specific index
+    splice(index, deleteCount, ...items) {
+        const removedItems = [];
 
-    //     // Remove elements
-    //     for (let i = 0; i < deleteCount; i++) {
-    //         if (this.data[index + i] !== undefined) {
-    //             removedItems.push(this.data[index + i]);
-    //             delete this.data[index + i];
-    //         }
-    //     }
+        // Remove elements
+        for (let i = 0; i < deleteCount; i++) {
+            if (this.data[index + i] !== undefined) {
+                removedItems.push(this.data[index + i]);
+                delete this.data[index + i];
+            }
+        }
 
-    //     // Shift elements to accommodate new items
-    //     if (items.length > 0) {
-    //         for (let i = this.count - 1; i >= index; i--) {
-    //             this.data[i + items.length] = this.data[i];
-    //         }
-    //         items.forEach((item, i) => {
-    //             this.data[index + i] = item;
-    //         });
-    //         this.count += items.length - deleteCount;
-    //     } else {
-    //         this.count -= deleteCount;
-    //     }
+        // Shift elements to accommodate new items
+        if (items.length > 0) {
+            for (let i = this.count - 1; i >= index; i--) {
+                this.data[i + items.length] = this.data[i];
+            }
+            items.forEach((item, i) => {
+                this.data[index + i] = item;
+            });
+            this.count += items.length - deleteCount;
+        } else {
+            this.count -= deleteCount;
+        }
 
-    //     return removedItems;
-    // }
+        return removedItems;
+    }
 
     // IndexOf: Finds the index of an element
     indexOf(value) {
