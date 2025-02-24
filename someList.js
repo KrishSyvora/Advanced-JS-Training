@@ -1,3 +1,11 @@
+function readVeryLongList() {
+    let list = [];
+    for (let i = 1; i <= 100000; i++) {
+        list.push(i);
+    }
+    return list;
+}
+
 var somelist = readVeryLongList();
 
 var nextItem = function () {

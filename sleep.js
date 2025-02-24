@@ -3,6 +3,7 @@ function sleep(seconds) {
         setTimeout(resolve, seconds * 1000);
     });
 }
-sleep(3).then(() => {
-    console.log("After 3 seconds");
+let seconds = prompt("Enter seconds to wait: ");
+sleep(seconds).then(() => {
+    console.log(`After ${seconds} seconds`);
 });

@@ -7,7 +7,7 @@ function testNum(num) {
         }
     });
 }
-
-testNum(15)
+let num = prompt("Enter a number: ");
+testNum(num)
     .then(result => console.log(result))
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
